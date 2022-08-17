@@ -1,0 +1,43 @@
+.EmployeeForm{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+.EmployeeForm h1{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: olive;
+    border-radius: 10px;
+    
+    width: 100%;
+    height: 50vh;
+}
+
+.Container button{
+    width: 100px;
+    height: 30px;
+}
+
+.form{
+    background-color: grey;
+    width: 50%;
+    height: 50vh;
+}
+
+.formInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
