@@ -1,27 +1,17 @@
-.EmployeeForm{
+.EmployeeForm1{  
     width: 100%;
     height: 100vh;
+
     background-color: black;
     color: white;
 }
 
-.EmployeeForm h1{
+.EmployeeForm1 h1{
     display: flex;
     justify-content: center;
+   
     margin: 0;
     padding: 0;
-}
-
-.Container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: olive;
-    border-radius: 10px;
-    
-    width: 100%;
-    height: 50vh;
 }
 
 .Container button{
@@ -29,15 +19,46 @@
     height: 30px;
 }
 
-.form{
-    background-color: grey;
-    width: 50%;
-    height: 50vh;
+.Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    
+    margin-top: 20px;
+    padding-top: 20px;
+    width: 100%;
+    height: 70vh;
 }
 
-.formInput{
+.subContainer{
+    background-color:grey ;
+
+    width: 50%;
+    height: 100%;
+    
+}
+
+.subContainer form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    
+    background-color:grey ;
+
+   
+    width: 100%;
+    height: 100%;
+    
 }
+
+.subContainer input{
+    border-radius: 5px;
+    box-shadow: none;
+
+    height: 40px;
+    width: 50%;
+}
+

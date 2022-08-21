@@ -4,8 +4,7 @@ import EmployeeForm from "./components/EmployeeForm";
 function App() {
   return (
     <div className="App">
- 
-      
+     
       <EmployeeForm/>
      
     </div>
