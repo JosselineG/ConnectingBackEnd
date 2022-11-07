@@ -1,11 +1,24 @@
 import './App.css';
-import EmployeeForm from "./components/EmployeeForm";
+import Home from './components/Home/Home';
+import Register from './components/Register/Register';
+import Login from './components/Login/Login';
+
+import { Route,Routes} from "react-router-dom"
+
 
 function App() {
   return (
     <div className="App">
      
-      <EmployeeForm/>
+ 
+    
+     
+      <Routes>
+       <Route path="/" element={<Home/>}/>
+       <Route path="Register" element={<Register/>}/>
+       <Route path="Login" element={<Login/>}/>
+     </Routes>
+
      
     </div>
   );

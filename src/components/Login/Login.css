@@ -1,0 +1,16 @@
+.Login{
+    width: 100%;
+    height: 100vh;
+    background-color:palevioletred;
+    overflow: hidden;
+    text-align: center;
+
+}
+
+
+
+.Body{
+    width: 50vh;
+    height:40vh;
+    background-color: bisque;
+}
