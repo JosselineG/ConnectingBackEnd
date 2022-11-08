@@ -82,9 +82,7 @@ function Register() {
 
         <h1>Register</h1>
             <div className="Container">
-
                 <div className="subContainer">
-
                     <form onSubmit={handleSubmit}>
 
                         <label>First Name:</label>
@@ -137,7 +135,7 @@ function Register() {
                             Submit
                         </button>
                         <div>
-                            Already register?<Link style={{ color: "white", textDecoration: 'none' }} to='/Login'> Log in</Link>
+                            Already register?<Link style={{ color: "blue", textDecoration: 'none' }} to='/Login'> Log in</Link>
                         </div>
                     </form>
 
