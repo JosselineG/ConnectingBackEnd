@@ -1,3 +1,9 @@
+# Project
+This is a registration form that connects the front end to the backend using MySQL, Express, Nodejs.
+
+![](./src/Components/RegisterCapt.PNG)
+![](./src/Components/LoginCapt.PNG)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
