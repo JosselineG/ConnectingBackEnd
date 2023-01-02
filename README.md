@@ -2,8 +2,8 @@
 This is a registration form that connects the front end to the backend using MySQL, Express, Nodejs.
 
 # Project Screenshot
-![](./src/Components/RegisterCapt.PNG)
-![](./src/Components/LoginCapt.PNG)
+![](./src/RegisterCapt.PNG)
+![](./src/LoginCapt.PNG)
 
 # Getting Started with Create React App
 
