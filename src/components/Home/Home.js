@@ -11,12 +11,20 @@ function Home() {
         <div className="Home">
             <nav className='Navbar'>
                 <div>
+              
+                     {/*    <li>
+                            <Link style={{ color: "white", textDecoration: 'none' }} to='Register'>LOGO</Link>
+                        </li>
+                       */}
                     <ul>
                         <li>
                             <Link style={{ color: "white", textDecoration: 'none' }} to='Register'>Register</Link>
                         </li>
                         <li>
                             <Link style={{ color: "white", textDecoration: 'none' }} to='Login'>Login</Link>
+                        </li>
+                        <li>
+                            <Link style={{ color: "white", textDecoration: 'none' }} to='Admin'>Admin</Link>
                         </li>
                     </ul>
                 </div>
