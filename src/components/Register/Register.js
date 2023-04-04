@@ -1,7 +1,7 @@
 import "./Register.css";
 import { useState } from "react";
 import axios from "axios";
-import logo from "../assets/SampLogo4.png"
+import logo from "../assets/LogoTP2.png"
 import { Link } from "react-router-dom";
 import validator from 'validator';
 
@@ -79,12 +79,24 @@ function Register() {
                             hashPassWord: hashPassWord
                         });
                         console.log(response.data);
+
+
                     } catch (error) {
                         console.error(error);
                     }
+
+                    // Clearing the form
+                    setUserData({
+                        firstName: "",
+                        lastName: "",
+                        userPassWord: "",
+                        userPassWordConfirm: "",
+                        userEmail: ""
+                    });
                 }
             }
         }
+
 
     }
 

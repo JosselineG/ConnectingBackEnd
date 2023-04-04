@@ -21,9 +21,11 @@
     width: 25%;
     height: 57vh;
    
-    background-color: rgb(66, 75, 75);
+/*     background-color: #424b4b; */
     border-radius: 10px;
-
+    
+    background: linear-gradient(175deg, #9589a8,#b15b5b);
+    background-size: 100% ;
 } 
   
 .formB{
@@ -58,8 +60,7 @@
 }
 
 .Logo{
-    width: 40%;
-    height: 19vh;
 
- 
+    width: 150px;
+    filter: drop-shadow(0px -10px 10px #222);
 }

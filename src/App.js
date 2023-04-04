@@ -4,6 +4,7 @@ import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import Admin from './components/Admin/Admin';
 import { Route,Routes} from "react-router-dom"
+import LoggedIn from './components/LoggedIn/LoggedIn';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
        <Route path="Register" element={<Register/>}/>
        <Route path="Login" element={<Login/>}/>
        <Route path="Admin" element={<Admin/>}/>
+       <Route path="LoggedIn" element={<LoggedIn/>}/>
      </Routes>
 
      

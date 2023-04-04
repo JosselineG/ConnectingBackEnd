@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "./Login.css"
 import { Link } from "react-router-dom";
-import logo from "../assets/SampLogo4.png"
+
+import { redirect } from "react-router-dom";
+import logo from "../assets/LogoTP2.png"
+import LoggedIn from "../LoggedIn/LoggedIn";
 import axios from "axios";
 
 function Login() {
@@ -17,18 +20,36 @@ function Login() {
 
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
 
         e.preventDefault();
-/* 
-        
 
-        if(Email === userEmail){
+        try {
+            const response = await axios.post('http://localhost:5000/LoggedIn', {
+                
+                Email: userLoginForm.Email,
+                PassWord: userLoginForm.Password
+            });
+            console.log(response.data);
 
+            setUserLoginForm({ Email: "", Password: "" })
+
+            if(response.status === 200){
+              
+                return redirect('LoggedIn')
+            
+            }else{
+            
+                return null;
+            
+            }
+
+        } catch (error) {
+            console.error(error);
         }
- */
 
-        console.log(userLoginForm)
+
+      
     }
 
 
@@ -68,7 +89,9 @@ function Login() {
 
                                 type="Password"
                                 name="Password"
-                                required
+                                minLength={8}
+                                maxLength={8}
+                                required={true}
                                 onChange={handleChange}
                                 value={userLoginForm.Password}
                             >
