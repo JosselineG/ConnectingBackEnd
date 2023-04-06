@@ -25,6 +25,8 @@ function Register() {
         setUserData({ ...userData, [e.target.name]: e.target.value })
     }
 
+    const [successfullyRegister, setSuccessfullyRegister] = useState(false);
+
 
     const handleSubmit = async (e) => {
 
@@ -80,6 +82,11 @@ function Register() {
                         });
                         console.log(response.data);
 
+                        if (response.status === 200) {
+                            setSuccessfullyRegister(true)
+                        } else {
+                            return null;
+                        }
 
                     } catch (error) {
                         console.error(error);
@@ -115,85 +122,91 @@ function Register() {
                 </div>
             </nav>
 
+
             <div className="EmployeeForm1">
 
-                <div className="Imag">
+                <div className="Container">
+               
+                    <div className={successfullyRegister? 'Imag-right':'Imag-left'} >
 
-                    <img className="logo" src={logo} alt="logo" />
+                        <img className="logo" src={logo} alt="logo" />
+
+                        {successfullyRegister ? <h1>Welcome
+                            <span className="dots1">.</span>
+                            <span className="dots2">.</span>
+                            <span className="dots3">.</span>
+                        </h1> : null}
 
 
-                    <h1>Welcome
-                        <span className="dots1">.</span>
-                        <span className="dots2">.</span>
-                        <span className="dots3">.</span>
-                    </h1>
+                    </div>
+            
+                    {successfullyRegister ? <div className="subContainer-left">
+
+                        <Link style={{ color: "white"}} to='/Login'><h1>Log In</h1> </Link>
+
+                    </div> : <div className="subContainer-right" >
+
+                        <form onSubmit={handleSubmit}>
+
+                            <label>First Name:</label>
+                            <input
+                                type="text"
+                                name="firstName"
+                                onChange={handleChange}
+                                value={userData.firstName}>
+                            </input>
+
+                            <label>Last Name:</label>
+                            <input
+                                type="text"
+                                name="lastName"
+                                onChange={handleChange}
+                                value={userData.lastName}>
+                            </input>
+
+                            <label>Email:</label>
+                            <input
+                                type="email"
+                                name="userEmail"
+                                onChange={handleChange}
+                                value={userData.userEmail}>
+                            </input>
 
 
+                            <label>Password (8 characters minimum):</label>
+                            <input
+                                type="password"
+                                name="userPassWord"
+                                minLength={8}
+                                maxLength={8}
+                                required={true}
+                                onChange={handleChange}
+                                value={userData.userPassWord}>
+                            </input>
+
+
+                            <label>Confirm Password:</label>
+                            <input
+                                type="password"
+                                name="userPassWordConfirm"
+                                minLength={8}
+                                maxLength={8}
+                                required={true}
+                                onChange={handleChange}
+                                value={userData.userPassWordConfirm}>
+                            </input>
+
+                            <button
+                                type="submit">
+                                Submit
+                            </button>
+                            <div>
+                                Already registered?<Link style={{ color: "blue" }} to='/Login'> Log in</Link>
+                            </div>
+                        </form>
+                    </div>}
+                     
                 </div>
-
-                <div className="subContainer">
-
-                    <form onSubmit={handleSubmit}>
-
-                        <label>First Name:</label>
-                        <input
-                            type="text"
-                            name="firstName"
-                            onChange={handleChange}
-                            value={userData.firstName}>
-                        </input>
-
-                        <label>Last Name:</label>
-                        <input
-                            type="text"
-                            name="lastName"
-                            onChange={handleChange}
-                            value={userData.lastName}>
-                        </input>
-
-                        <label>Email:</label>
-                        <input
-                            type="email"
-                            name="userEmail"
-                            onChange={handleChange}
-                            value={userData.userEmail}>
-                        </input>
-
-
-                        <label>Password (8 characters minimum):</label>
-                        <input
-                            type="password"
-                            name="userPassWord"
-                            minLength={8}
-                            maxLength={8}
-                            required={true}
-                            onChange={handleChange}
-                            value={userData.userPassWord}>
-                        </input>
-
-
-                        <label>Confirm Password:</label>
-                        <input
-                            type="password"
-                            name="userPassWordConfirm"
-                            minLength={8}
-                            maxLength={8}
-                            required={true}
-                            onChange={handleChange}
-                            value={userData.userPassWordConfirm}>
-                        </input>
-
-                        <button
-                            type="submit">
-                            Submit
-                        </button>
-                        <div>
-                            Already registered?<Link style={{ color: "blue", textDecoration: 'none' }} to='/Login'> Log in</Link>
-                        </div>
-                    </form>
-                </div>
-
-
             </div>
 
         </div>

@@ -1,6 +1,6 @@
 .EmployeeForm1 {
     width: 100%;
-    height: 100vh;
+    height: 90vh;
 
     background-color: rgb(26, 25, 25);
 
@@ -20,66 +20,94 @@
     margin: 0;
     padding: 0;
 }
+/* --------------------Container------------------------------- */
+
+.Container{
+    width: 80%;
+    height: 75vh;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+ 
+    background-color: rgb(66, 75, 75);
+
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+
 /* -------------------Left Container-------------------- */
-.Imag {
-    width: 40%;
-    height: 85vh;
+.Imag-left {
+    width: 50%;
+    height: 75vh;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    background-color: rgb(66, 75, 75);
-
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-     border-right: 5px rgb(0, 0, 0) solid; 
+    background: linear-gradient(to left, #9589a8 ,#b15b5b);
 }
 
 .logo {
 
-    width: 50%;
-    height: 40vh;
 
     width: 250px;
-    filter: drop-shadow(-10px -10px 5px #222);
+    /* Using drop-shadow allows us to add a shadow to an 
+    element that doesn’t correspond to its bounding box, doesn't use spread operator */
+    filter: drop-shadow(-10px -5px 5px #222);
 }
 
-
-/* --------------------Right Container------------------ */
-
-.subContainer {
-    width: 40%;
-    height: 85vh;
+.subContainer-left{
+    width: 50%;
+    height: 75vh;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    background-color: rgb(66, 75, 75,0.5);
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+}
+
+/* --------------------Right Container------------------ */
+.Imag-right{
+    width: 50%;
+    height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(to left, #9589a8 ,#b15b5b);
+}
+
+.subContainer-right{
+    width: 50%;
+    height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 
 
-.subContainer form {
+.subContainer-right form {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-   
 
-    /* background-color: rgb(128, 128, 128, 0.2); */
-    border-radius: 20px;
-    
-    width: 80%;
-    height: 70vh;
+    width: 100%;
+    height: 80%;
 
 }
 
-.subContainer input {
+.subContainer-right input {
     border-radius: 5px;
     box-shadow: none;
 
@@ -87,7 +115,7 @@
     width: 50%;
 }
 
-.subContainer button {
+.subContainer-right button {
     width: 100px;
     height: 30px;
 }
@@ -108,7 +136,7 @@
 }
 
 
-/* ----------------------Logo Animation---------------- */
+/* ----------------------Animation---------------- */
 @media (prefers-reduced-motion: no-preference) {
     .dots1{
         animation: dot1-spin 1s infinite 2s linear alternate;
@@ -119,6 +147,25 @@
     .dots3{
         animation: dot3-spin 1s infinite 1s linear alternate;
     }
+    .Imag-right{
+        animation: Imag 2s ease-in-out 1 normal forwards;
+    }
+    .subContainer-left{
+        /* :animation-name,animation-duration,animation-timing-function, animation-iteration-count,animation-direction,animation-fill-mode*/
+        animation: subContainer 2s ease-in-out 1 normal forwards;
+    }
+
+}
+
+@keyframes Imag {
+    from   {transform:translateY(0px);}
+  to     {transform: translateX(510px);}
+
+}
+@keyframes subContainer {
+    from   {transform:translateY(0px);}
+  to     {transform: translateX(-510px);}
+
 }
 
 @keyframes dot1-spin {

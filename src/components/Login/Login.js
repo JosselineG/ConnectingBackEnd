@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import "./Login.css"
 import { Link } from "react-router-dom";
 
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/LogoTP2.png"
-import LoggedIn from "../LoggedIn/LoggedIn";
 import axios from "axios";
 
 function Login() {
 
     const [userLoginForm, setUserLoginForm] = useState({ Email: "", Password: "" })
-
+    const [successfullyLogin, setSuccesfullyLoginForm] = useState(false)
+    const navigate = useNavigate();
 
     /*handleChange runs on every keystroke to update the React state, 
     the displayed value will update as the user types.*/
@@ -26,7 +26,7 @@ function Login() {
 
         try {
             const response = await axios.post('http://localhost:5000/LoggedIn', {
-                
+
                 Email: userLoginForm.Email,
                 PassWord: userLoginForm.Password
             });
@@ -34,14 +34,14 @@ function Login() {
 
             setUserLoginForm({ Email: "", Password: "" })
 
-            if(response.status === 200){
-              
-                return redirect('LoggedIn')
-            
-            }else{
-            
+            if (response.status === 200) {
+                setSuccesfullyLoginForm(true)
+                navigate('/LoggedIn')
+
+            } else {
+
                 return null;
-            
+
             }
 
         } catch (error) {
@@ -49,7 +49,7 @@ function Login() {
         }
 
 
-      
+
     }
 
 
@@ -70,42 +70,42 @@ function Login() {
 
                 <div className="body">
 
-                        <form className="formB" onSubmit={handleSubmit}>
+                    <form className="formB" onSubmit={handleSubmit}>
 
 
-                            <label> Email</label>
-                            <input
+                        <label> Email</label>
+                        <input
 
-                                type="text"
-                                name="Email"
-                                onChange={handleChange}
-                                value={userLoginForm.Email}
+                            type="text"
+                            name="Email"
+                            onChange={handleChange}
+                            value={userLoginForm.Email}
 
-                            >
-                            </input>
+                        >
+                        </input>
 
-                            <label> Password</label>
-                            <input
+                        <label> Password</label>
+                        <input
 
-                                type="Password"
-                                name="Password"
-                                minLength={8}
-                                maxLength={8}
-                                required={true}
-                                onChange={handleChange}
-                                value={userLoginForm.Password}
-                            >
-                            </input>
-                            
-                            <button type="Submit">
-                                Submit
-                            </button>
-                           
-                            <div>Don't have an account?<Link style={{ color: "blue", textDecoration: 'none' }} to='/Register'> Sign Up</Link></div>
-                 
-                        </form>
+                            type="Password"
+                            name="Password"
+                            minLength={8}
+                            maxLength={8}
+                            required={true}
+                            onChange={handleChange}
+                            value={userLoginForm.Password}
+                        >
+                        </input>
 
-                        <img className="Logo" src={logo} alt="logo" />
+                        <button type="Submit">
+                            Submit
+                        </button>
+
+                        <div>Don't have an account?<Link style={{ color: "blue", textDecoration: 'none' }} to='/Register'> Sign Up</Link></div>
+
+                    </form>
+
+                    <img className="Logo" src={logo} alt="logo" />
 
                 </div>
             </div>
